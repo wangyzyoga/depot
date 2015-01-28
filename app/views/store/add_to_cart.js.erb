@@ -1,1 +1,1 @@
-page.replace_html("cart", :partial => "cart", :object => @cart)
+$("#cart").html("<%= j render partial: "cart", object: @cart %>")
