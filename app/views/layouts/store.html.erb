@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1transitional.dtd" >
+
+<html>
+  <head>
+    <title>Pragprog Books Online Store</title>
+      <%= stylesheet_link_tag "depot", :media => "all" %>
+			<%= javascript_include_tag :application %>	
+	</head>
+
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+	</div>
+  <div id="columns">
+      <div id="side">
+				<div id="cart">
+					<%= render(:partial => "cart", :object => @cart) %>
+				</div>
+		<a href="http://www....">Home</a><br />
+		<a href="http://www..../fap">Questions</a><br />
+		<a href="http://www....">News</a><br />
+		<a href="http://www....">Contact</a><br /><br />
+		<%= DateTime.parse(Time.now.to_s).strftime('%Y-%m-%d %H:%M:%S').to_s %>
+	  </div>
+	  <div id="main">
+			<% if flash[:notice] %>
+				<div id="notice"><%= flash[:notice] %></div>
+			<% end %>
+
+			<%= yield :layout %>
+	  </div>
+  </div>
+</body>
+</html>
