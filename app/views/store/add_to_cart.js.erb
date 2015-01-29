@@ -1,1 +1,4 @@
 $("#cart").html("<%= j render partial: "cart", object: @cart %>")
+
+if($('#cart tr').length==1){$('#cart').show("slow");}  
+$('#current_item').css({'color':'red'}).animate({'color': "white"});

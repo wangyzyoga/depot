@@ -1,11 +1,13 @@
-<div calss="cart-title">Your Pragmatic Cart</div>
-<table>
-	<%= render(:partial => "cart_item", :collection => cart.items) %>
+<% unless cart.items.empty? %>
+	<div calss="cart-title">Your Pragmatic Cart</div>
+	<table>
+		<%= render(:partial => "cart_item", :collection => cart.items) %>
+		<tr calss="total-line">
+			<td colspan="2">Total</td>
+			<td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
+		</tr>
+	</table>
 
-	<tr calss="total-line">
-		<td colspan="2">Total</td>
-		<td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
-	</tr>
-</table>
-
-<%= button_to 'Empty cart', empty_cart_path %>
+	<%= button_to 'Checkout', checkout_path %>
+	<%= button_to 'Empty cart', empty_cart_path %>
+<% end %>
