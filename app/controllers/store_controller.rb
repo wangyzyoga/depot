@@ -40,6 +40,6 @@ class StoreController < ApplicationController
 
 private
   def find_cart
-	  Cart.new
+	  session[:cart] ||= Cart.new
   end
 end
