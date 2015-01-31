@@ -10,8 +10,10 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+	<% end %>
 
+	<fieldset>
+      <legend>Please Enter Your Details</legend>
 			<div>
 				<%= f.label :name, "Name:" %>
 				<%= f.text_field :name, :size => 40 %>
@@ -36,5 +38,6 @@
 			</div>
 
 			<%= submit_tag "Place Order", :calss => "submit" %>
+	</fieldset>
 	<% end %>
 </div>

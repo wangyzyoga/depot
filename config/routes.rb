@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :line_items
 
+  post 'order/checkout' => 'store#checkout', as: 'checkout'
   resources :orders
 
   get 'store/index'
